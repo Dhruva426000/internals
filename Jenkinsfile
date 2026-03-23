@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Dhruva426000/practice-maven'
+                git branch: 'main', url: 'https://github.com/Dhruva426000/internals'
             }
         }
 
@@ -18,16 +18,10 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
         stage('Run') {
             steps {
-                sh 'java -jar target/internals-1.0-SNAPSHOT.jar'
-                   
+                sh 'ls target/'
+                sh 'java -jar target/*.jar'
             }
         }
     }

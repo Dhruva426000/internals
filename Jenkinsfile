@@ -27,6 +27,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'java -jar target/internals-1.0-SNAPSHOT.jar'
+                   
             }
         }
     }
